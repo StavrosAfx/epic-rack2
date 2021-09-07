@@ -1,0 +1,35 @@
+{% load static %}
+
+<header>
+    <nav>
+        <div class="container1">
+            <a href="#" class="logo"><img src="{% static 'images/epic-logo-tag2.png' %}" ></a>
+            <ul class="menulist">
+                <li><a href="#">Latsia</a>
+                <ul>
+                    {% for rows in links %}
+                    <li><a href="{{ rows.get_url }}">{{ rows.row_name }}</a></li>
+                    {% endfor %}
+
+
+                </ul>
+            </li>
+                <li><a href="#">Kenedy</a>
+                <ul>
+                    <li><a href="#">a</a></li>
+                    <li><a href="#">a</a></li>
+                    <li><a href="#">a</a></li>
+                    <li><a href="#">a</a></li>
+                    <li><a href="#">a</a></li>
+                    <li><a href="#">a</a></li>
+
+
+
+
+                </ul>
+            </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>

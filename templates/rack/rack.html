@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    {% for rack in rack%}
+    <div class="card">
+        
+        <div class="card__inner">
+            
+            <div class="card__face card__face--front">
+                <div class="card__header">
+                <h2>{{ rack.rack_name }} Rack Front</h2>
+                <button id="myBtn"class="viewbutton">View</button>
+                <div class="botton">
+                    <i class="fas fa-arrow-right"></i>
+                    </div>
+            </div>
+            <div class="card__body">
+            
+            <ul>
+                {% for item in item %}
+                <li>
+
+                 <span>{{ item.slot }} {{ item.ending_slot }}</span><p>{{ item.item_name }}</p><p>{{ item.description }}</p> </li>
+                 {% endfor %}
+                 <li><span>2</span>Item number one </li>
+                <li><span>3</span>Item number one </li>
+                <li><span>4</span>Item number one </li>
+                <li><span>5</span>Item number one </li>
+                <li><span>6</span>Item number one </li>
+                <li><span>7</span>Item number one </li>
+                <li><span>8</span>Item number one </li>
+               
+
+
+            </ul>
+            
+        </div>
+    </div>
+        <div class="card__face card__face--back">
+
+                <div class="card__header">
+
+                    <h2>A1 Rack Back</h2>
+                    <button id="myBtn2"class="viewbutton">View</button>
+                    <div class="botton2">
+                        <i class="fas fa-arrow-right"></i>
+                        </div>
+                </div>
+                <div class="card__body">
+
+                    <ul>
+                        {% for item in item %}
+                        <li><span>{{ item.slot }} {{ item.ending_slot }}</span> <p>{{ item.item_AC }}</p><p>{{ item.item_DC }}</p></li>
+                        {% endfor %}
+                        <li><span>2</span>Item number one </li>
+                        <li><span>3</span>Item number one </li>
+                        <li><span>4</span>Item number one </li>
+                        <li><span>5</span>Item number one </li>
+                        <li><span>6</span>Item number one </li>
+                        <li><span>7</span>Item number one </li>
+                        <li><span>8</span>Item number one </li>
+                        <li><span>9</span>Item number one </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">x</span>
+          <img src="{% static 'images/mx480.jpg' %}" alt="">
+        </div>
+
+      </div>
+      <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close2">x</span>
+          <img src="{% static 'images/mx480.jpg' %}" alt="">
+        </div>
+
+      </div>
+      {% endfor %}
+      </div>
+      
+      <script src={% static 'js/card.js' %}></script>
+      <script>
+          var modal = document.getElementById('myModal');
+  
+          // Get the button that opens the modal
+          var btn3 = document.getElementById("myBtn");
+  
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+  
+          // When the user clicks on the button, open the modal
+          btn3.onclick = function() {
+              modal.style.display = "block";
+          }
+  
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+              modal.style.display = "none";
+          }
+  
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+              }
+          }
+  
+          var modal2 = document.getElementById('myModal2');
+  
+  // Get the button that opens the modal
+  var btn4 = document.getElementById("myBtn2");
+  
+  // Get the <span> element that closes the modal
+  var span2 = document.getElementsByClassName("close2")[0];
+  
+  // When the user clicks on the button, open the modal
+  btn4.onclick = function() {
+      modal2.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span2.onclick = function() {
+      modal2.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal2) {
+          modal2.style.display = "none";
+      }
+  }
+      </script>
+
+
+
+{% endblock %}
